@@ -14,7 +14,10 @@
 		1E2C9941221541FE0080A380 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E2C993F221541FE0080A380 /* LaunchScreen.storyboard */; };
 		1E2C994C221541FE0080A380 /* BubbleTeaLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2C994B221541FE0080A380 /* BubbleTeaLocationTests.swift */; };
 		1E2C9957221541FE0080A380 /* BubbleTeaLocationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2C9956221541FE0080A380 /* BubbleTeaLocationUITests.swift */; };
-		1E2C996522155EDB0080A380 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2C996422155EDB0080A380 /* Place.swift */; };
+		1E925AA0221E80C900655CBA /* JsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E925A9F221E80C900655CBA /* JsonResponse.swift */; };
+		1E925AA2221E814C00655CBA /* VenuesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E925AA1221E814C00655CBA /* VenuesResponse.swift */; };
+		1E925AA4221E817E00655CBA /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E925AA3221E817E00655CBA /* Venue.swift */; };
+		1E925AA6221E843D00655CBA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E925AA5221E843D00655CBA /* Location.swift */; };
 		28355387CD9ED96864B84DC4 /* Pods_BubbleTeaLocationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF267FEF13614BD01A776238 /* Pods_BubbleTeaLocationUITests.framework */; };
 		42A0FFF973D3188456D46A7E /* Pods_BubbleTeaLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102C0039A28B60FA7376D9A4 /* Pods_BubbleTeaLocation.framework */; };
 		AFE9427A90F6E49C84BDD873 /* Pods_BubbleTeaLocationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10CBA9B31644FE0F2327DD90 /* Pods_BubbleTeaLocationTests.framework */; };
@@ -53,7 +56,10 @@
 		1E2C9952221541FE0080A380 /* BubbleTeaLocationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BubbleTeaLocationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E2C9956221541FE0080A380 /* BubbleTeaLocationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTeaLocationUITests.swift; sourceTree = "<group>"; };
 		1E2C9958221541FE0080A380 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1E2C996422155EDB0080A380 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		1E925A9F221E80C900655CBA /* JsonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonResponse.swift; sourceTree = "<group>"; };
+		1E925AA1221E814C00655CBA /* VenuesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesResponse.swift; sourceTree = "<group>"; };
+		1E925AA3221E817E00655CBA /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		1E925AA5221E843D00655CBA /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		4E75BB0D661F4A09F0E794D4 /* Pods-BubbleTeaLocationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BubbleTeaLocationTests.release.xcconfig"; path = "Target Support Files/Pods-BubbleTeaLocationTests/Pods-BubbleTeaLocationTests.release.xcconfig"; sourceTree = "<group>"; };
 		67FA813DD67C26F3BC5D11B2 /* Pods-BubbleTeaLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BubbleTeaLocation.debug.xcconfig"; path = "Target Support Files/Pods-BubbleTeaLocation/Pods-BubbleTeaLocation.debug.xcconfig"; sourceTree = "<group>"; };
 		800A38D6BA6A76E5AAF36DC6 /* Pods-BubbleTeaLocationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BubbleTeaLocationUITests.debug.xcconfig"; path = "Target Support Files/Pods-BubbleTeaLocationUITests/Pods-BubbleTeaLocationUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,9 +122,9 @@
 		1E2C9935221541FD0080A380 /* BubbleTeaLocation */ = {
 			isa = PBXGroup;
 			children = (
+				1E925A9E221E80B400655CBA /* Model */,
 				1E2C9936221541FD0080A380 /* AppDelegate.swift */,
 				1E2C9938221541FD0080A380 /* ViewController.swift */,
-				1E2C996422155EDB0080A380 /* Place.swift */,
 				1E2C993A221541FD0080A380 /* Main.storyboard */,
 				1E2C993D221541FE0080A380 /* Assets.xcassets */,
 				1E2C993F221541FE0080A380 /* LaunchScreen.storyboard */,
@@ -143,6 +149,17 @@
 				1E2C9958221541FE0080A380 /* Info.plist */,
 			);
 			path = BubbleTeaLocationUITests;
+			sourceTree = "<group>";
+		};
+		1E925A9E221E80B400655CBA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1E925A9F221E80C900655CBA /* JsonResponse.swift */,
+				1E925AA1221E814C00655CBA /* VenuesResponse.swift */,
+				1E925AA3221E817E00655CBA /* Venue.swift */,
+				1E925AA5221E843D00655CBA /* Location.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		33082032A1298FC619B1EEF0 /* Frameworks */ = {
@@ -417,9 +434,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E2C996522155EDB0080A380 /* Place.swift in Sources */,
+				1E925AA4221E817E00655CBA /* Venue.swift in Sources */,
+				1E925AA2221E814C00655CBA /* VenuesResponse.swift in Sources */,
 				1E2C9939221541FD0080A380 /* ViewController.swift in Sources */,
+				1E925AA0221E80C900655CBA /* JsonResponse.swift in Sources */,
 				1E2C9937221541FD0080A380 /* AppDelegate.swift in Sources */,
+				1E925AA6221E843D00655CBA /* Location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
